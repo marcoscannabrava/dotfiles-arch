@@ -1,7 +1,6 @@
 [character]
-symbol = "➜"
-style_success = "purple"
-style_failure = "red"
+success_symbol = "[➜](purple)"
+error_symbol = "[➜](red)"
 
 [directory]
 style = "blue"
