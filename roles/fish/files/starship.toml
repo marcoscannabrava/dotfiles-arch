@@ -6,8 +6,7 @@ error_symbol = "[➜](red)"
 style = "blue"
 
 [cmd_duration]
-style = "yellow"
-prefix = ""
+format = "[$duration](yellow)"
 
 [git_branch]
 symbol = ""
@@ -15,5 +14,7 @@ style = "#808080"
 
 [git_status]
 style = "red"
-prefix = ""
-suffix = " "
+show_sync_count = true
+ahead = "⇡${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+behind = "⇣${count} "
