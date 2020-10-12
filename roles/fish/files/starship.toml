@@ -18,3 +18,6 @@ format = "[$ahead_behind$all_status ](red)"
 ahead = "⇡${count} "
 diverged = "⇕⇡${ahead_count}⇣${behind_count} "
 behind = "⇣${count} "
+
+[gcloud]
+disabled = true
