@@ -12,6 +12,7 @@
     creates: ~/.config/fish/conf.d/omf.fish
     executable: /usr/bin/fish
 
+# TODEL
 - name: Remove oh-my-fish installer
   file:
     path: /tmp/oh-my.fish
@@ -46,6 +47,22 @@
   copy:
     src: starship.toml
     dest: ~/.config/
+
+- name: create fish completion dir
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+
+- name: install kubectl fish completion
+  git:
+    repo: https://github.com/evanlucas/fish-kubectl-completions
+    dest: ~/.config/fish/completions/fish-kubectl-completions
+
+- name: enable kubectl fish completion
+  file:
+    src: ~/.config/fish/completions/fish-kubectl-completions/completions/kubectl.fish
+    dest: ~/.config/fish/completions/kubectl.fish
+    state: link
 
 # Separated root|users synchronize as module bugs when using become on the task: it copies always in user homedir
 - name: Sync fish config files for cli (if user)
