@@ -21,3 +21,7 @@ behind = "⇣${count} "
 
 [gcloud]
 disabled = true
+
+[kubernetes]
+format = 'on [⛵ $context \($namespace\)](dimmed green) '
+disabled = false
