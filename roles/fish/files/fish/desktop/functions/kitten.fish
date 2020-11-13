@@ -1,4 +1,4 @@
 # Defined in - @ line 1
-function ssh --description 'alias ssh'
+function kitten --description 'alias kitten'
     kitty +kitten ssh $argv;
 end
