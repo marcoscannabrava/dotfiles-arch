@@ -1,12 +1,6 @@
 ---
 - hosts: all
   gather_facts: yes
-  pre_tasks:
-    - name: Limit to Archlinux and NixOS
-      fail:
-        msg: "{{ ansible_distribution }} is not supported with this tag."
-      when: (ansible_distribution != "Archlinux") and
-            (ansible_distribution != "NixOS")
 
 - hosts: cli:desktop
   roles:
