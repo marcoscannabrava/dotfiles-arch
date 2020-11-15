@@ -2,7 +2,7 @@
 
 # Bash file uploader
 
-# Install: sudo wget $raw_url -O /usr/bin/up
+# Install: sudo wget $raw_url -O /usr/bin/up && sudo chmod +x /usr/bin/up
 
 # Use with fish:
 # echo "\
