@@ -43,7 +43,7 @@ function x0(){
 
 function ix(){
   # ix.io will be used for piped data upload
-  cat - | curl -s -F 'f:1=<-' 'http://ix.io'
+  curl -s -F 'f:1=<-' 'http://ix.io'
 }
 
 # Arguments
