@@ -12,8 +12,6 @@
       tags: screen
     - role: git
       tags: git,cli
-    - role: userbin
-      tags: userbin
 
 - hosts: desktop
   roles:
