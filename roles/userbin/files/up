@@ -1,0 +1,118 @@
+#!/usr/bin/env bash
+
+# Bash file uploader
+
+# Install: sudo wget $raw_url -O /usr/bin/up
+
+# Use with fish:
+# echo "\
+# function up
+#   /usr/bin/up $argv;
+# end
+# " > $HOME/.config/fish/functions/up.fish
+
+# Vars
+
+autocopy=1
+
+# Functions
+
+function usage(){
+  echo -e "\nBash file uploader\n"
+  echo -e "Usage :"
+  echo -e "\t$0 [OPTIONS] file"
+  echo -e "\tcat file.ext | $0 [OPTIONS]"
+  echo -e "Options :"
+  echo -e "\t-h\t Print this usage"
+  echo -e "\t-a\t Disable autocopy in clipboard"
+}
+
+function x0(){
+  # x0 will be used for file upload and stdin upload
+  # It correctly set filetype for imgs, ix does not
+
+  # If argument is empty, upload stdin
+  if [ -z "$1" ]
+  then
+    curl -s -F "file=@-" 'https://x0.at/'
+  # Else upload filename
+  else
+    curl -s -F "file=@\"$1\"" 'https://x0.at/'
+  fi
+}
+
+function ix(){
+  # ix.io will be used for piped data upload
+  cat - | curl -s -F 'f:1=<-' 'http://ix.io'
+}
+
+# Arguments
+
+while getopts "ha" arg
+do
+  case $arg in
+    a)
+      autocopy=0
+      ;;
+    h)
+      usage
+      exit
+      ;;
+    *)
+      usage
+      exit 1
+      ;;
+  esac
+done
+shift $((OPTIND-1))
+
+# Main
+
+# Test if first argument is an existing file
+if [ -n "$1" ] && [ ! -f "$1" ]
+then
+  echo "File \"$1\" not found"
+  exit 1
+fi
+
+# If no piped data
+if [ -t 0 ]
+then
+
+  # If no argument, read stdin and save url
+  if [ -z "$1" ]
+  then
+    echo -e "Enter text, then upload with twice CTRL+d:\n---"
+    url=$(x0)
+    echo -e "---"
+  # Else upload argument to x0.at and save url
+  else
+    url=$(x0 "$1")
+  fi
+
+# Else if piped data
+else
+  # Upload to ix.io and save url
+  url=$(ix)
+fi
+
+# Print url
+echo "$url"
+
+# If autocopy is set
+if [ "$autocopy" == "1" ]
+then
+  # If xorg or wayland is running
+  if env | grep 'DISPLAY' &> /dev/null
+  then
+    # If xclip is installed
+    if which xclip &> /dev/null
+    then
+      xclip "$url"
+    # Else if wl-clipboard is installed
+    elif which wl-copy &> /dev/null
+    then
+      wl-copy "$url"
+    fi
+  fi
+fi

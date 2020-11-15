@@ -4,9 +4,8 @@
     path: ~/bin
     state: directory
 
-- name: install ix.io up in in home/bin
-  shell: |
-    curl https://gist.githubusercontent.com/eoli3n/422afffb4801b7419233c232e2843887/raw/f07e3db3658810e6cdafd6352b56c9d1c4ae971b/up > ~/bin/up
-    chmod +x ~/bin/up
-  args:
-    creates: ~/bin/up
+- name: install up in in home/bin
+  copy:
+    src: up
+    dest: ~/bin
+    mode: 0755
