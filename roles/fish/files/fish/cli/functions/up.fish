@@ -1,3 +1,4 @@
 function up
-	~/bin/up $argv;
+  $HOME/bin/up ;
 end
+
