@@ -33,6 +33,9 @@ You should use ``--check`` and ``--diff`` to dryrun first.
 
 Check details in ``roles/*/README.md``.  
 
+This project only manage dotfiles.  
+To install required packages, use [arch-config](https://github.com/eoli3n/arch-config) or [nix-config](https://github.com/eoli3n/nix-config).  
+
 ##### 1. Fork Me!
 
 ##### 2. Clone your repo
@@ -53,8 +56,8 @@ cp hosts.template hosts
 ```
 
 Add your hostnames in section:
-- ***cli***: install only cli tools
-- ***desktop***: install cli tools + desktop environment  
+- ***cli***: only cli dotfiles
+- ***desktop***: cli dotfiles + desktop environment  
 Define which user will get configurations with *ansible_user* var.  
 
 ###### a. localhost run

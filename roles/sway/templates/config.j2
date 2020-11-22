@@ -114,8 +114,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 bindsym $mod+Shift+q exec ~/.config/wofi/powermenu.sh
 
 #grimshot
-bindsym $mod+Shift+p exec grimshot save area
-bindsym $mod+p exec grimshot save output
+bindsym $mod+Shift+p exec grimshot save area | wl-copy -p
+bindsym $mod+p exec grimshot save output | wl-copy -p
 
 # variety
 bindsym $mod+less exec variety --next
