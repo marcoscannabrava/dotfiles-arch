@@ -3,12 +3,10 @@
 set $laptop "Chimei Innolux Corporation 0x14D3 0x00000000"
 set $screen "Dell Inc. DELL P2417H CW6Y77AG05NB"
 set $proj "ONKYO Corporation Sound System 0x00000000"
-#output $laptop pos 1920 1330 res 1920x1080 scale 1.4
-#output $screen pos 0 1080 res 1920x1080
+
 #output $proj pos 0 0 res 1920x1080
-output $proj pos 0 0 res 1920x1080
-output $screen pos 0 1080 res 1920x1080
-output $laptop pos 1920 1560 res 1920x1080 scale 1.8
+#output $screen pos 0 1080 res 1920x1080
+#output $laptop pos 1920 1560 res 1920x1080 scale 1.8
 
 # dpms
 output * dpms on
@@ -45,6 +43,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 10%- && \
 
 # exec startup apps
 exec --no-startup-id swaymsg 'exec variety &'
+exec --no-startup-id swaymsg 'exec kanshi &'
 exec --no-startup-id swaymsg 'workspace $tag4; exec kitty -e "tiny"'
 exec --no-startup-id swaymsg 'workspace $tag2; exec kitty -e "ssh-add" && kitty'
 #INCLUDE####################################################

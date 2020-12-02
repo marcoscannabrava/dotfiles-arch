@@ -28,7 +28,7 @@
 - name: check git plugin install
   shell: grep 'abbr.*git' ~/.config/fish/fish_variables
   register: gitcheck
-  ignore_errors: True
+  ignore_errors: yes
   changed_when: false
 
 - name: Install git plugin
