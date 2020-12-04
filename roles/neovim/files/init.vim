@@ -37,3 +37,6 @@ colorscheme snazzy
 
 " Default term cursor
 set guicursor=
+
+" Enable copy to system clipboard
+set clipboard+=unnamedplus
