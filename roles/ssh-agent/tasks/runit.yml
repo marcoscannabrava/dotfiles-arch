@@ -1,0 +1,10 @@
+---
+- name: create runit service dir
+  file:
+    path: ~/.config/service
+    state: directory
+
+- name: copy ssh-agent service
+  copy:
+    src:
+    dest:
