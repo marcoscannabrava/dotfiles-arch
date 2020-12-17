@@ -3,6 +3,7 @@
 set -x XDG_CURRENT_DESKTOP 'Unity' # waybar workaround for tray
 set -x MOZ_ENABLE_WAYLAND 1
 set -x KITTY_ENABLE_WAYLAND 1
+set -x QT_QPA_PLATFORM 'wayland-egl'
 set -x BROWSER 'firefox'
 
 set TTY1 (tty)
