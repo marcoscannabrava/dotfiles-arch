@@ -1,6 +1,0 @@
----
-- name: copy ssh-agent service
-  copy:
-    src: ssh-agent
-    dest: ~/.config/service/
-    directory_mode: yes

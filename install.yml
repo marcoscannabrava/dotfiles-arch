@@ -18,9 +18,6 @@
 
 - hosts: desktop
   roles:
-    - role: ssh-agent
-      tags: ssh-agent
-      when: ansible_distribution == "Archlinux" and ansible_user_id != 'root'
     - role: gtk
       tags: gtk
       when: ansible_user_id != 'root'

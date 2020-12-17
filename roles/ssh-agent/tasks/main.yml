@@ -1,3 +1,0 @@
----
-- name: include init method 
-  include_tasks: "{{ ansible_service_mgr }}.yml"
