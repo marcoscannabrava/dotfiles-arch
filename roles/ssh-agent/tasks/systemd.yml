@@ -3,7 +3,7 @@
   copy:
     src: ssh-agent.service
     dest: ~/.config/systemd/user/
-  notify: enable ssh-agent
+  notify: enable ssh-agent systemd
 
 - name: Configure pam environment
   copy:

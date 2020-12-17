@@ -1,9 +1,16 @@
 ---
-- name: enable ssh-agent                  
+- name: enable ssh-agent systemd
   systemd:
     name: ssh-agent
     daemon_reload: yes
     state: started
     enabled: yes
     scope: user
+  when: ansible_virtualization_role == "host"
+
+- name: enable ssh-agent runit
+  community.general.runit:
+    name: ssh-agent
+    enabled: yes
+    state: restarted
   when: ansible_virtualization_role == "host"
