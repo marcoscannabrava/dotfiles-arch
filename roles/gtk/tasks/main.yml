@@ -5,9 +5,9 @@
     state: directory
 
 - name: Configure GTK3
-  copy:
-    src: settings.ini
-    dest: ~/.config/gtk-3.0/
+  template:
+    src: settings.ini.j2
+    dest: ~/.config/gtk-3.0/settings.ini
 
 - name: Configure GTK2
   template:
