@@ -60,7 +60,7 @@
         "format": "<span foreground='#929292'></span> vpn",
         "interval": 5,
         "exec" : "echo a",
-        "exec-if" : "pregrep openvpn &>/dev/null"
+        "exec-if" : "pgrep openvpn"
     },
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
@@ -102,7 +102,7 @@
         "format": " <span foreground='#f3f99d'>backup...</span>",
         "interval": 5,
         "exec": "echo a",
-        "exec-if": "pgrep borg &>/dev/null"
+        "exec-if": "pgrep borg"
     },
     "custom/systemd": {
         "format": "<span foreground='#ff5c57'> {}</span>",
