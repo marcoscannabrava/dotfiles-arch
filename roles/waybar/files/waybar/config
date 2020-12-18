@@ -60,7 +60,7 @@
         "format": "<span foreground='#929292'></span> vpn",
         "interval": 5,
         "exec" : "echo a",
-        "exec-if" : "systemctl is-active --quiet vpn"
+        "exec-if" : "pregrep openvpn &>/dev/null"
     },
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
@@ -98,23 +98,11 @@
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh /"
     },
-    "custom/zfs-trim": {
-        "format": " <span foreground='#f3f99d'>trimming...</span>",
-        "interval": 5,
-        "exec": "echo a",
-        "exec-if": "systemctl is-active --quiet zfs-trim"
-    },
-    "custom/zfs-scrub": {
-        "format": " <span foreground='#f3f99d'>scrubbing...</span>",
-        "interval": 5,
-        "exec": "echo a",
-        "exec-if": "systemctl is-active --quiet zfs-scrub"
-    },
     "custom/backup": {
         "format": " <span foreground='#f3f99d'>backup...</span>",
         "interval": 5,
         "exec": "echo a",
-        "exec-if": "systemctl is-active --quiet backup"
+        "exec-if": "pgrep borg &>/dev/null"
     },
     "custom/systemd": {
         "format": "<span foreground='#ff5c57'> {}</span>",
