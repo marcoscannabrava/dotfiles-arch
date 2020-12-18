@@ -181,7 +181,10 @@ bindsym $mod+Next move workspace to output right
 
 {% include 'by_host/' + ansible_hostname + '/config.j2' ignore missing %}
 
-{% include 'by_os/' + ansible_distribution|lower + '/config.j2' ignore missing %}
+# exec startup apps
+exec --no-startup-id swaymsg 'exec variety &'
+exec --no-startup-id swaymsg 'workspace $tag4; exec kitty -e "tiny"'
+exec --no-startup-id swaymsg 'workspace $tag2; exec kitty -e "ssh-add"&& kitty'
 
 # reload the configuration file
 bindsym $mod+Shift+r reload

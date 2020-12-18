@@ -11,6 +11,9 @@ output $laptop pos 1920 1560 res 1920x1080 scale 1.8
 # toggle proj
 bindsym $mod+p output "ONKYO Corporation Sound System 0x00000000" toggle
 
+# start kanshi
+exec --no-startup-id swaymsg 'exec kanshi &'
+
 # dpms
 output * dpms on
 
@@ -43,10 +46,4 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +10% && \
   brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%- && \
   brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob
-
-# exec startup apps
-exec --no-startup-id swaymsg 'exec variety &'
-exec --no-startup-id swaymsg 'exec kanshi &'
-exec --no-startup-id swaymsg 'workspace $tag4; exec kitty -e "tiny"'
-exec --no-startup-id swaymsg 'workspace $tag2; exec kitty -e "ssh-add" && kitty'
 #INCLUDE####################################################
