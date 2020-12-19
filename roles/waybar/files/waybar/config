@@ -111,7 +111,7 @@
         "exec-if": "which systemctl"
     },
     "custom/kubernetes": {
-        "format": " {}",
+        "format": "<span foreground='#929292'></span> {}",
         "interval": 5,
         "exec": "~/.config/waybar/modules/kubernetes.sh",
         "exec-if": "which kubectx kubens"
