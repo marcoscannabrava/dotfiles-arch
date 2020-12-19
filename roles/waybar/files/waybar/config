@@ -72,7 +72,7 @@
     "layer": "bottom",
     "position": "bottom",
 
-    "modules-left": ["tray", "custom/spotify"],
+    "modules-left": ["tray", "custom/spotify", "custom/kubernetes"],
     "modules-center": ["network#speed"],
     "modules-right": ["custom/systemd", "custom/backup", "custom/zfs-trim", "custom/zfs-scrub", "temperature", "custom/storage", "cpu", "memory" ],
     "custom/spotify": {
@@ -108,7 +108,13 @@
         "format": "<span foreground='#ff5c57'> {}</span>",
         "interval": 5,
         "exec": "~/.config/waybar/modules/systemd.sh",
-        "exec-if": "~/.config/waybar/modules/systemd.sh"
+        "exec-if": "which systemctl"
+    },
+    "custom/kubernetes": {
+        "format": " {}",
+        "interval": 5,
+        "exec": "~/.config/waybar/modules/kubernetes.sh",
+        "exec-if": "which kubectx kubens"
     },
     "cpu": {
         "interval": 3,
