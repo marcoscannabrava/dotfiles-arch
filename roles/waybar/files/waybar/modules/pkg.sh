@@ -9,7 +9,7 @@ pacman_check() {
         exit 0
     fi
     
-    if [[ $(checkupdates | grep '^linux\ ') ]]
+    if checkupdates | grep '^linux\ '
     then
         echo "$pac <span foreground='#ff5c57'></span> $aur"
     else
@@ -19,7 +19,7 @@ pacman_check() {
 }
 
 xbps_check(){
-    pkg=(xbps-install -nu | wc -l)
+    pkg=$(xbps-install -nu | wc -l)
 
     if [[ $pkg -eq "0" ]] || [[ ! $pkg =~ [0-9]+ ]]
     then
