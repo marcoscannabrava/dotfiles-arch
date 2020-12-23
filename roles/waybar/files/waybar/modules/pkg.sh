@@ -19,16 +19,16 @@ pacman_check() {
 }
 
 xbps_check(){
-    pkg=$(xbps-install -nu)
+    pkg=$(xbps-install -nu 2>/dev/null)
     pkg_count=$(wc -l <<< "$pkg")
 
-    if [[ $pkg -eq "0" ]] || [[ ! $pkg =~ [0-9]+ ]]
+    if [[ $pkg_count -eq "0" ]] || [[ ! $pkg =~ [0-9]+ ]]
     then
         exit 0
     fi
     text="<span foreground='#929292'></span> $pkg_count"
     tooltip=$(awk '{print $1}' <<< "$pkg")
-    printf {"text": "$text", "tooltip": "$tooltip"}
+    printf '{"text": "%s", "tooltip": "%s"}' "$text" "$tooltip"
 }
 
 if grep -i "arch" /etc/os-release &>/dev/null
