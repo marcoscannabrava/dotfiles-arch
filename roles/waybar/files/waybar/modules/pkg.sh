@@ -27,7 +27,7 @@ xbps_check(){
         exit 0
     fi
     text="<span foreground='#929292'></span> $pkg_count"
-    tooltip=$(awk '$1=$1' ORS='\\n' <<< "$pkg")
+    tooltip=$(awk '$0=$1' ORS='\\n' '{print $1}' <<< "$pkg")
     printf '{"text": "%s", "tooltip": "%s"}' "$text" "$tooltip"
 }
 
