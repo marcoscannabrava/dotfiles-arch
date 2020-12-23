@@ -28,10 +28,10 @@ xbps_check(){
     echo "<span foreground='#929292'></span> $pkg" ■
 }
 
-if grep -i "arch" /etc/os-release
+if grep -i "arch" /etc/os-release &>/dev/null
 then
     pacman_check
-elif grep -i "void" /etc/os-release
+elif grep -i "void" /etc/os-release &>/dev/null
 then
     xbps_check
 fi
