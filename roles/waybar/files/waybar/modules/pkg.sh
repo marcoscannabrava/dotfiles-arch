@@ -25,7 +25,7 @@ xbps_check(){
     then
         exit 0
     fi
-    echo "<span foreground='#929292'></span> $pkg" ■
+    echo "<span foreground='#929292'></span> $pkg"
 }
 
 if grep -i "arch" /etc/os-release &>/dev/null
