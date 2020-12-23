@@ -11,8 +11,8 @@ pacman_check() {
         exit 0
     fi
 
-    text="$pac <span foreground='#929292'></span> $aur"
-    tooltip=$(awk -v ORS='\\n' '$0=$1' <<< "$pac$aur")
+    text="$pac_count <span foreground='#929292'></span> $aur_count"
+    tooltip=$(awk -v ORS=' ' '$0=$1' <<< "$pac$aur")
 }
 
 xbps_check(){
@@ -25,7 +25,7 @@ xbps_check(){
     fi
 
     text="<span foreground='#929292'></span> $pkg_count"
-    tooltip=$(awk -v ORS='\\n' '$0=$1' <<< "$pkg")
+    tooltip=$(awk -v ORS=' ' '$0=$1' <<< "$pkg")
 }
 
 if grep -i "arch" /etc/os-release &>/dev/null
