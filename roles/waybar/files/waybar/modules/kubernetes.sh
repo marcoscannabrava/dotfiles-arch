@@ -1,6 +1,6 @@
 #!/bin/bash
-context=$(kubectx -c)
-namespace=$(kubens -c)
+context=$(kubectx -c 2>/dev/null)
+namespace=$(kubens -c 2>/dev/null)
 
 if [[ $namespace == "default" ]]
 then
