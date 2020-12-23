@@ -32,6 +32,6 @@ else
         printf "$json_fmt" "$pcent" "warning"
     elif [[ $pcent -ge $critical ]]
     then
-      printf "$json_fmt" "$pcent" "critical"
+        printf "$json_fmt" "$pcent" "critical"
     fi
 fi

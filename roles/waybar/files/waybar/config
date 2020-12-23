@@ -37,7 +37,8 @@
     "custom/pkg": {
         "format": "{}",
         "interval": 3600,
-        "exec": "~/.config/waybar/modules/pkg.sh"
+        "exec": "~/.config/waybar/modules/pkg.sh",
+        "return-type": "json"
     },
     "network": {
         "format-wifi": "<span foreground='#929292'></span> {essid} <span foreground='#929292'>{signalStrength}%</span>",
