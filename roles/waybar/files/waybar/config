@@ -103,19 +103,19 @@
         "format": " <span foreground='#f3f99d'>backup...</span>",
         "interval": 5,
         "exec": "echo a",
-        "exec-if": "pgrep borg &>/dev/null"
+        "exec-if": "pgrep borg >/dev/null"
     },
     "custom/systemd": {
         "format": "<span foreground='#ff5c57'> {}</span>",
         "interval": 5,
         "exec": "~/.config/waybar/modules/systemd.sh",
-        "exec-if": "which systemctl &>/dev/null"
+        "exec-if": "which systemctl >/dev/null"
     },
     "custom/kubernetes": {
         "format": "<span foreground='#929292'></span> {}",
         "interval": 5,
         "exec": "~/.config/waybar/modules/kubernetes.sh",
-        "exec-if": "kubectx -c &>/dev/null"
+        "exec-if": "kubectx -c >/dev/null"
     },
     "cpu": {
         "interval": 3,
