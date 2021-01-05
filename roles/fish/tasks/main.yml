@@ -4,6 +4,8 @@
     url: https://get.oh-my.fish
     dest: /tmp/oh-my.fish
     mode: '0777'
+    # TORM https://github.com/oh-my-fish/oh-my-fish/issues/799
+    validate_certs: no
   changed_when: false
 
 - name: Install oh-my-fish
