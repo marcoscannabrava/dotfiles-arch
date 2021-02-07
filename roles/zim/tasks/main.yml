@@ -1,0 +1,5 @@
+---
+- name: template zim config file
+  template:
+    src: style.conf.j2
+    dest: ~/.config/zim/style.conf
