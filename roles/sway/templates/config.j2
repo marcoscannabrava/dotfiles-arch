@@ -115,6 +115,7 @@ bindsym $mod+Shift+q exec ~/.config/wofi/powermenu.sh
 
 #grimshot
 bindsym Shift+Print exec grimshot save area /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
+bindsym Control+Print exec grimshot save window /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
 bindsym Print exec grimshot save output /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
 
 # variety
