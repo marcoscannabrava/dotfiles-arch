@@ -114,8 +114,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 bindsym $mod+Shift+q exec ~/.config/wofi/powermenu.sh
 
 #grimshot
-bindsym Shift+Print exec grimshot save area | wl-copy -p
-bindsym Print exec grimshot save output | wl-copy -p
+bindsym Shift+Print exec grimshot save area /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
+bindsym Print exec grimshot save output /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
 
 # variety
 bindsym $mod+less exec variety --next
@@ -156,6 +156,7 @@ bindsym $mod+Shift+agrave move container to workspace $tag10
 
 # floatings
 for_window [title="Images de Variety"] floating enable, border pixel 1, move left 647px
+for_window [app_id="zenity"] floating enable
 
 # assign and focus xwayland
 assign [class="Spotify"] $tag5
