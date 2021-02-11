@@ -1,34 +1,19 @@
 # DISPLAY
 - hardware acceleration : firefox, kitty, mpv
-- mpv still ok with wayland ?
-- configure kanshi auto output
-- sway keybind screens output
 
 # CLI
 - userbin or fish functions ?
-- up wrapper : 'ix' and 'upfile' = auto-copy
 
 # FIX
 - change kitty block char when unused term
 - disable tooltip on waybar modules
-- kanshi reconfigure outputs on sway reload
 
 # ISSUES
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
-* waybar urgent styling issue : https://github.com/Alexays/Waybar/issues/704
-* wob styling : https://github.com/francma/wob/issues/38
-* wofi issues : https://todo.sr.ht/~scoopta/wofi
-* tray menu theme and over window : https://github.com/Alexays/Waybar/issues/21#issuecomment-628648061
-* sway border issue : https://github.com/swaywm/sway/issues/5327
 * firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
 
 # IMPROVMENTS
-* try a GTK theme with some transparency
 - dynamic waybar colors
-- rclone mount service
-- import pictures in shotwell
-- remove exec in waybar modules : https://github.com/Alexays/Waybar/issues/707
-- pastebinit with x0.at
 
 #TEST
 * wf-recorder
