@@ -12,8 +12,7 @@ set $proj "ONKYO Corporation Sound System 0x00000000"
 bindsym $mod+p output "ONKYO Corporation Sound System 0x00000000" toggle
 
 # start kanshi
-exec_always --no-startup-id swaymsg 'pkill kanshi'
-exec_always --no-startup-id swaymsg 'exec kanshi &'
+swaymsg 'exec "pkill kanshi; kanshi &"'
 
 # dpms
 output * dpms on
