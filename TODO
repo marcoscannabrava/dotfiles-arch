@@ -14,6 +14,8 @@
 
 # IMPROVMENTS
 - dynamic waybar colors
+- wrapper script to assign new windows to current workspace to avoid wrong workspace when jumping quickly between workspaces
+  - wrap all .desktop with wofi
 
 #TEST
 * wf-recorder
