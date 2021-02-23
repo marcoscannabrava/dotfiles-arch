@@ -1,4 +1,9 @@
 ---
+- name: create zim config directory
+  file:
+    path: ~/.config/zim
+    state: directory
+
 - name: template zim config file
   template:
     src: style.conf.j2
