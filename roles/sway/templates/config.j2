@@ -129,9 +129,9 @@ bindsym $mod+Control+t exec thunar
 bindsym $mod+Control+p exec pavucontrol
 
 # bindsym spotify
-bindsym $mod+Control+left exec playerctl previous
-bindsym $mod+Control+down exec playerctl play-pause
-bindsym $mod+Control+right exec playerctl next
+bindsym $mod+Control+left exec playerctl -p spotify previous
+bindsym $mod+Control+down exec playerctl -p spotify play-pause
+bindsym $mod+Control+right exec playerctl -p spotify next
 
 # switch to workspace
 bindsym $mod+ampersand workspace $tag1
