@@ -224,7 +224,7 @@ exec_always ~/.config/sway/import-gsettings
 exec mako
 
 # pipewire
-{% if {{ ansible_os_family }} is 'void' %}
+{% if ansible_os_family == 'void' %}
 exec pipewire
 exec pipewire-pulse
 {% endif %}
