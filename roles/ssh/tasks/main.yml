@@ -1,0 +1,14 @@
+---
+- name: perms on .ssh
+  file:
+    path: ~/.ssh
+    mode: 0700
+    state: directory
+    recurse: yes
+
+- name: configure ssh
+  blockinfile:
+    create: yes
+    path: ~/.ssh/config
+    block: |
+      StrictHostKeyChecking no

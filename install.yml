@@ -15,6 +15,8 @@
       tags: screen
     - role: git
       tags: git,cli
+    - role: ssh
+      tags: ssh 
 
 - hosts: desktop
   roles:
