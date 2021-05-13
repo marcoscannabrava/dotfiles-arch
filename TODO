@@ -21,4 +21,4 @@
 
 # Voidlinux
 - [x] waybar upgrade module with xbps-flatpak
-- [ ] list xbps updates without need to xbps-install -S as root
+- [x] list xbps updates without need to xbps-install -S as root

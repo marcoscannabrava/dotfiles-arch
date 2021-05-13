@@ -16,7 +16,7 @@ pacman_check() {
 }
 
 xbps_check(){
-    pkg=$(xbps-install -nu 2>/dev/null)
+    pkg=$(xbps-install -SMnu 2>/dev/null)
     pkg_count=$(wc -l <<< "$pkg")
     flatpak_count=$(flatpak update | grep -E '^ *[0-9]+\.' | awk '{print $2}' | wc -l)
 
