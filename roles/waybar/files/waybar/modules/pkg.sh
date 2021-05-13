@@ -18,13 +18,14 @@ pacman_check() {
 xbps_check(){
     pkg=$(xbps-install -nu 2>/dev/null)
     pkg_count=$(wc -l <<< "$pkg")
+    flatpak_count=$(flatpak update | grep -E '^ *[0-9]+\.' | awk '{print $2}' | wc -l)
 
     if [[ $pkg_count -eq "0" ]] || [[ ! $pkg =~ [0-9]+ ]]
     then
         exit 0
     fi
 
-    text="<span foreground='#929292'></span> $pkg_count"
+    text="$pkg_count <span foreground='#929292'></span> $flatpak_count"
     tooltip=$(awk -v ORS=' ' '$0=$1' <<< "$pkg")
 }
 

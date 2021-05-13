@@ -13,10 +13,12 @@
 * firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
 
 # IMPROVMENTS
-- dynamic waybar colors
-- wrapper script to assign new windows to current workspace to avoid wrong workspace when jumping quickly between workspaces
-  - wrap all .desktop with wofi
+- wrap all .desktop with wofi
 
 #TEST
 * wf-recorder
 - launch kitty in xwayland mode to be able to share window 
+
+# Voidlinux
+- [x] waybar upgrade module with xbps-flatpak
+- [ ] list xbps updates without need to xbps-install -S as root
