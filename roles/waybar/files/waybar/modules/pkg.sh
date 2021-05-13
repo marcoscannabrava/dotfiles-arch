@@ -20,7 +20,7 @@ xbps_check(){
     pkg_count=$(wc -l <<< "$pkg")
     flatpak_count=$(flatpak update | grep -E '^ *[0-9]+\.' | awk '{print $2}' | wc -l)
 
-    if [[ $pkg_count -eq "0" ]] || [[ ! $pkg =~ [0-9]+ ]]
+    if [[ $pkg_count -eq "0" ]] && [[ $flatpak_count -eq "0" ]] 
     then
         exit 0
     fi
