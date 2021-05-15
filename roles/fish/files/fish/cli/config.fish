@@ -2,7 +2,6 @@ set -x LANG 'fr_FR.UTF-8'
 set -x EDITOR 'nvim'
 set -x VISUAL 'nvim'
 set -x PAGER 'most'
-set -x SVDIR '~/.config/service'
 set -gx SYSTEMD_PAGER 'less'
 set -U fish_greeting ""
 

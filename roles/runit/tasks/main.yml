@@ -1,5 +1,15 @@
 ---
 - name: create service dir
   file:
-    path: ~/.config/service
+    path: ~/service
     state: directory
+
+- name: set svdir in fish
+  copy:
+    src: runit.fish
+    dest: ~/.config/fish/conf.d/
+
+- name: user services
+  synchronize:
+    src: service/
+    dest: ~/service

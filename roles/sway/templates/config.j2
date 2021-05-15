@@ -230,7 +230,5 @@ exec mako
 exec syncthing
 
 # pipewire
-{% if ansible_os_family == 'void' %}
 exec pipewire
 exec pipewire-pulse
-{% endif %}
