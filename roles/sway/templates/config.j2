@@ -224,11 +224,11 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec_always ~/.config/sway/import-gsettings
 
 # mako
-exec mako
+exec_always if ! pgrep mako; then mako; fi
 
 # syncthing
-exec syncthing
+exec_always if ! pgrep syncthing; then syncthing; fi
 
 # pipewire
-exec pipewire
-exec pipewire-pulse
+exec_always if ! pgrep pipewire; then pipewire; fi
+exec_always if ! pgrep pipewire-pulse; then pipewire-pulse; fi
