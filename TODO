@@ -12,6 +12,7 @@
 * tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
 * firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
 - /etc/profile.d not used with fish as default shell
+- travis-ci fails
 
 # IMPROVMENTS
 - wrap all .desktop with wofi
