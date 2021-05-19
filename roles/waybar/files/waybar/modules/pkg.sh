@@ -18,7 +18,7 @@ pacman_check() {
 xbps_check(){
     pkg=$(xbps-install -SMnu 2>/dev/null)
     pkg_count=$(wc -l <<< "$pkg")
-    flatpak_count=$(flatpak update | grep -E '^ *[0-9]+\.' | awk '{print $2}' | wc -l)
+    flatpak_count=$(flatpak remote-ls --updates --columns=name | wc -l)
 
     if [[ $pkg_count -eq "0" ]] && [[ $flatpak_count -eq "0" ]] 
     then
