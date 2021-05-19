@@ -15,7 +15,7 @@
 
 # IMPROVMENTS
 - [ ] wrap all .desktop with wofi
-- [ ] tiny irc in screen
+- [x] tiny irc in screen
 
 # TEST
 * wf-recorder
