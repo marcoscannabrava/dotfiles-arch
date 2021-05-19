@@ -188,9 +188,30 @@ bindsym $mod+Next move workspace to output right
 
 {% include 'by_host/' + ansible_hostname + '/config.j2' ignore missing %}
 
-# exec startup apps
-exec --no-startup-id swaymsg 'exec variety &'
-exec --no-startup-id swaymsg 'workspace $tag4; exec kitty -e "tiny"'
+# exec background apps
+
+# tiny
+exec_always bash -c "pgrep tiny || screen -S tiny -md tiny"
+# mako
+exec_always bash -c "pgrep mako || mako"
+# syncthing
+exec_always bash -c "pgrep syncthing || syncthing"
+# pipewire
+exec_always bash -c "pgrep pipewire || pipewire"
+exec_always bash -c "pgrep pipewire-pulse || pipewire-pulse"
+
+# exec foreground apps
+
+# variery
+exec variety &
+# tiny
+exec swaymsg 'workspace $tag4; exec kitty bash -c "screen -R tiny"'
+# waybar exec
+exec_always ~/.config/waybar/waybar.sh &
+# wob exec
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+# set gtk theme
+exec_always ~/.config/sway/import-gsettings
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
@@ -214,21 +235,4 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# waybar exec
-exec_always ~/.config/waybar/waybar.sh &
 
-# wob exec
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-
-# set gtk theme
-exec_always ~/.config/sway/import-gsettings
-
-# mako
-exec_always if ! pgrep mako; then mako; fi
-
-# syncthing
-exec_always if ! pgrep syncthing; then syncthing; fi
-
-# pipewire
-exec_always if ! pgrep pipewire; then pipewire; fi
-exec_always if ! pgrep pipewire-pulse; then pipewire-pulse; fi
