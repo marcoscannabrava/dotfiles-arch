@@ -6,6 +6,7 @@
 * [ ] firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
 - [ ] firefox crash when sway reload : https://bugzilla.mozilla.org/show_bug.cgi?id=1652820
 - [ ] firefox list broken with multihead and factor : https://github.com/swaywm/sway/issues/6147
+- [ ] firefox right clic broken : https://bugzilla.mozilla.org/show_bug.cgi?id=1661516
 
 # FIX
 - [ ] change kitty block char when unused term
