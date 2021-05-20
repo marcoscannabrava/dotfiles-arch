@@ -6,7 +6,7 @@
 - [ ] change kitty block char when unused term
 - [ ] disable tooltip on waybar modules
 - [ ] /etc/profile.d not used with fish as default shell
-- [ ] travis-ci fails
+- [x] travis-ci fails
 
 ### TOIMPROVE
 - [ ] wrap all .desktop with wofi
