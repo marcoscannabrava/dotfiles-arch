@@ -16,6 +16,7 @@
 ### TOTEST
 - [ ] wf-recorder
 - [ ] launch kitty in xwayland mode to be able to share window 
+- [ ] waybar pkg module tooltip with flatpak and xbps
 - hardware acceleration
   - [ ] firefox
   - [ ] kitty
