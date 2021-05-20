@@ -23,16 +23,15 @@ RUN pacman -Syu --noconfirm \
       gettext \
       patch \
       rsync \
-      xorg-server-xephyr 
-ENV PATH="${PATH}:/usr/bin/core_perl"
-# Project deps
-RUN pacman -S --noconfirm \ 
+      xorg-server-xephyr \
       ansible \
       jshon \
       git \
       neovim \
       mako \
       fish
+ENV PATH="${PATH}:/usr/bin/core_perl"
+# Project deps
 # Fix tmp dir perms
 RUN chmod 1777 /tmp
 # Create test user
