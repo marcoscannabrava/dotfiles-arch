@@ -1,6 +1,7 @@
 ### TODO
 - [x] waybar upgrade module with xbps/flatpak
 - [x] list xbps updates without need to xbps-install -S as root
+- [ ] powermenu for voidlinux
 
 ### TOFIX
 - [ ] change kitty block char when unused term
