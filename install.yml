@@ -17,6 +17,8 @@
       tags: git,cli
     - role: ssh
       tags: ssh 
+    - role: htop
+      tags: htop
 
 - hosts: desktop
   roles:
