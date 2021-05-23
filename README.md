@@ -34,7 +34,7 @@ You should use ``--check`` and ``--diff`` to dryrun first.
 Check details in ``roles/*/README.md``.  
 
 This project only manages dotfiles.  
-To install required packages, use [arch-config](https://github.com/eoli3n/arch-config), [void-config](https://github.com/eoli3n/void-config) or [nix-config](https://github.com/eoli3n/nix-config).  
+To install required packages, use [arch-config](https://github.com/eoli3n/arch-config/blob/master/ansible/roles/desktop/tasks/main.yml), [void-config](https://github.com/eoli3n/void-config/blob/master/ansible/roles/desktop/tasks/main.yml) or [nix-config](https://github.com/eoli3n/nix-config/tree/master/modules/includes/).  
 
 ##### 1. Fork Me!
 
