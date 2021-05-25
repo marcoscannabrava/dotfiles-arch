@@ -18,9 +18,9 @@ pacman_check() {
 
 xbps_check(){
     xbps=$(xbps-install -SMnu 2>/dev/null)
-    if test -n "$xbps"; then xbps_count=$(xbps-install -SMnu 2>/dev/null | wc -l); fi
+    if test -n "$xbps"; then xbps_count=$(wc -l <<< "$xbps"); fi
     flatpak=$(flatpak remote-ls --updates --columns=name)
-    if test -n "$flatpak"; then flatpak_count=$(flatpak remote-ls --updates --columns=name | wc -l); fi
+    if test -n "$flatpak"; then flatpak_count=$(wc -l <<< "$flatpak"); fi
 
     if test -z "$xbps_count" && test -z "$flatpak_count"; then exit; fi
 
