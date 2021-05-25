@@ -9,10 +9,10 @@ pacman_check() {
     if test -z "$pac_count" && test -z "$aur_count"; then exit; fi
 
     text="$pac_count <span foreground='#929292'></span> $aur_count"
-    tooltip_pac="pacman:\n\t$(awk -v ORS=' ' '$0=$1' <<< "$pac")"
-    tooltip_aur="aur:\n\t$(awk -v ORS=' ' '$0=$1' <<< "$aur")"
+    tooltip_pac="pacman: $(awk -v ORS=' ' '$0=$1' <<< "$pac")"
+    tooltip_aur="aur: $(awk -v ORS=' ' '$0=$1' <<< "$aur")"
     tooltip+=$(if test -n "$pac"; then echo "$tooltip_pac"; fi)
-    tooltip+=$(if test -n "$pac" && test -n "$aur"; then echo "\n"; fi)
+    tooltip+=$(if test -n "$pac" && test -n "$aur"; then echo "\n\n"; fi)
     tooltip+=$(if test -n "$aur"; then echo "$tooltip_aur"; fi)
 }
 
@@ -25,10 +25,10 @@ xbps_check(){
     if test -z "$xbps_count" && test -z "$flatpak_count"; then exit; fi
 
     text="$xbps_count <span foreground='#929292'></span> $flatpak_count"
-    tooltip_xbps="xbps:\n\t$(awk -v ORS=' ' '$0=$1' <<< "$xbps")"
-    tooltip_flat="flatpak:\n\t$(awk -v ORS=' ' '$0=$1' <<< "$flatpak")"
+    tooltip_xbps="xbps: $(awk -v ORS=' ' '$0=$1 {gsub(/-[^-]*$/,"",$0) ; print}' <<< "$xbps")"
+    tooltip_flat="flatpak: $(awk -v ORS=' ' '$0=$1' <<< "$flatpak")"
     tooltip+=$(if test -n "$xbps"; then echo "$tooltip_xbps"; fi)
-    tooltip+=$(if test -n "$xbps" && test -n "$flatpak"; then echo "\n"; fi)
+    tooltip+=$(if test -n "$xbps" && test -n "$flatpak"; then echo "\n\n"; fi)
     tooltip+=$(if test -n "$flatpak"; then echo "$tooltip_flat"; fi)
 }
 
