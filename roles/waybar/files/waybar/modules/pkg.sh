@@ -2,9 +2,9 @@
 
 pacman_check() {
     pac=$(checkupdates 2>/dev/null)
-    if test -n "$pac"; then pac_count=$(wc -l <<< "$pac"); fi
+    if test -n "$pac"; then pac_count=$(wc -l <<< "$pac"); else pac_count="0"; fi
     aur=$(trizen -Qua 2>/dev/null)
-    if test -n "$aur"; then aur_count=$(wc -l <<< "$aur"); fi
+    if test -n "$aur"; then aur_count=$(wc -l <<< "$aur"); else aur_count="0"; fi
     
     if test -z "$pac_count" && test -z "$aur_count"; then exit; fi
 
@@ -18,9 +18,9 @@ pacman_check() {
 
 xbps_check(){
     xbps=$(xbps-install -SMnu 2>/dev/null)
-    if test -n "$xbps"; then xbps_count=$(wc -l <<< "$xbps"); fi
+    if test -n "$xbps"; then xbps_count=$(wc -l <<< "$xbps"); else xbps_count="0"; fi
     flatpak=$(flatpak remote-ls --updates --columns=name)
-    if test -n "$flatpak"; then flatpak_count=$(wc -l <<< "$flatpak"); fi
+    if test -n "$flatpak"; then flatpak_count=$(wc -l <<< "$flatpak"); else flatpak_count="0"; fi
 
     if test -z "$xbps_count" && test -z "$flatpak_count"; then exit; fi
 
