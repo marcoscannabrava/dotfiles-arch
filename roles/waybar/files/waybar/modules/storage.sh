@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# Functions
-escape() { while read l; do printf '%s\\n' "$l"; done }
-
-# Vars
 warning=85
 critical=95
 target="$1"
@@ -19,7 +15,7 @@ elif [[ "$fstype" == zfs ]]
 then
   zfsroot=$(findmnt -nT "$target" -o SOURCE | sed 's:/.*::')
   pcent=$(zpool list -o cap -H "$zfsroot" | tr -d '%')
-  tooltip=$(escape <<< "$(zfs list -o name,used,compressratio,logicalused,avail)")
+  tooltip="$(zfs list -o name,used,compressratio,logicalused,avail | awk '{printf "%s\\n", $0}')"
 else
   pcent=$(df "$target" --output="pcent" 2>/dev/null | sed 1d | tr -d ' ' | tr -d '%')
   tooltip="$pcent"
