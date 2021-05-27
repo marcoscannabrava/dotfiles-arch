@@ -12,6 +12,7 @@
 ### TOIMPROVE
 - [ ] wrap all .desktop with wofi
 - [x] tiny irc in screen
+- [ ] pre-commit ansible syntax check
 
 ### TOTEST
 - [ ] wf-recorder
