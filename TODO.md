@@ -4,6 +4,7 @@
 - [ ] powermenu for voidlinux
 - [x] gpg2
 - [ ] gopass
+  - [ ] create issue about autoclip not working with wayland
 - [ ] neomutt
 
 ### TOFIX
