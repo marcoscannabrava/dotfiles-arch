@@ -6,7 +6,7 @@ pacman_check() {
     aur=$(trizen -Qua 2>/dev/null)
     if test -n "$aur"; then aur_count=$(wc -l <<< "$aur"); else aur_count="0"; fi
     
-    if test -z "$pac_count" && test -z "$aur_count"; then exit; fi
+    if [[ "$pac_count" -eq 0 ]] && [[ "$aur_count" -eq 0 ]]; then exit; fi
 
     text="$pac_count <span foreground='#929292'></span> $aur_count"
     tooltip_pac="pacman: $(awk -v ORS=' ' '$0=$1' <<< "$pac")"
@@ -22,7 +22,7 @@ xbps_check(){
     flatpak=$(flatpak remote-ls --updates --columns=name)
     if test -n "$flatpak"; then flatpak_count=$(wc -l <<< "$flatpak"); else flatpak_count="0"; fi
 
-    if test -z "$xbps_count" && test -z "$flatpak_count"; then exit; fi
+    if [[ "$xbps_count" -eq 0 ]] && [[ "$flatpak_count" -eq 0 ]]; then exit; fi
 
     text="$xbps_count <span foreground='#929292'></span> $flatpak_count"
     tooltip_xbps="xbps: $(awk -v ORS=' ' '$0=$1 {gsub(/-[^-]*$/,"",$0) ; print}' <<< "$xbps")"
