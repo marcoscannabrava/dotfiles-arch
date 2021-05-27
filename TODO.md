@@ -5,6 +5,7 @@
 - [x] gpg2
 - [ ] gopass
   - [ ] create issue about autoclip not working with wayland
+  - [ ] wofi menu with sway keybind
 - [ ] neomutt
 
 ### TOFIX

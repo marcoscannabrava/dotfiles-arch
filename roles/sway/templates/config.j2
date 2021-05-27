@@ -30,6 +30,7 @@ bindsym $mod+Return exec kitty
 # start wofi
 bindsym $mod+Shift+d exec --no-startup-id wofi --show run -p "shell:" -L10
 bindsym $mod+d exec --no-startup-id wofi --show drun -p "app:" -L 10
+bindsym $mod+s exec --no-startup-id gopass ls --flat | wofi --dmenu -p "password:" -L 10 | xargs --no-run-if-empty gopass show -c
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -71,7 +72,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
