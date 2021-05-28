@@ -25,6 +25,9 @@
     - role: gtk
       tags: gtk
       when: ansible_user_id != 'root'
+    - role: gpg
+      tags: gpg
+      when: ansible_user_id != 'root'
     - role: sway
       tags: sway
       when: ansible_user_id != 'root'

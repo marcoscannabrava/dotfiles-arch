@@ -6,7 +6,8 @@
 - [ ] gopass
   - [ ] create issue about autoclip not working with wayland
   - [x] wofi menu with sway keybind
-  - [ ] gopass fills user
+  - [ ] gopass fills user, autotype multiple fields
+  - [ ] otp test
 - [ ] neomutt
 
 ### TOFIX
