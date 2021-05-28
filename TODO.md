@@ -4,10 +4,12 @@
 - [ ] powermenu for voidlinux
 - [x] gpg2
 - [ ] gopass
-  - [ ] create issue about autoclip not working with wayland
   - [x] wofi menu with sway keybind
-  - [ ] gopass fills user, autotype multiple fields
+  - [x] gtk pinentry
   - [ ] otp test
+  - [ ] gopass fills user, autotype multiple fields
+  - [ ] gopassbridge
+  - [ ] create issue about autoclip not working with wayland
 - [ ] neomutt
 
 ### TOFIX
