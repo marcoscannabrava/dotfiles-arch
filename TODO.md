@@ -14,7 +14,7 @@
 - [ ] change kitty block char when unused term
 - [x] disable or improve tooltips on waybar modules
 - [ ] /etc/profile.d not used with fish as default shell
-- [x] travis-ci fails
+- [ ] travis-ci fails : archlinux/base cannot pull
 
 ### TOIMPROVE
 - [ ] wrap all .desktop with wofi
