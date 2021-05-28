@@ -5,12 +5,13 @@
 - [x] gpg2
 - [ ] gopass
   - [ ] create issue about autoclip not working with wayland
-  - [ ] wofi menu with sway keybind
+  - [x] wofi menu with sway keybind
+  - [ ] gopass fills user
 - [ ] neomutt
 
 ### TOFIX
 - [ ] change kitty block char when unused term
-- [ ] disable tooltip on waybar modules
+- [x] disable or improve tooltips on waybar modules
 - [ ] /etc/profile.d not used with fish as default shell
 - [x] travis-ci fails
 
@@ -29,8 +30,9 @@
   - [ ] mpv
 
 ### ISSUES
-* [ ] tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
-* [ ] firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
+- [ ] tiny-irc : https://github.com/osa1/tiny/issues/created_by/eoli3n
+- [ ] firefox menu size when scaling : https://bugzilla.mozilla.org/show_bug.cgi?id=1638168
 - [ ] firefox crash when sway reload : https://bugzilla.mozilla.org/show_bug.cgi?id=1652820
 - [ ] firefox list broken with multihead and factor : https://github.com/swaywm/sway/issues/6147
 - [ ] firefox right clic broken : https://bugzilla.mozilla.org/show_bug.cgi?id=1661516
+- [ ] gopass-jsonapi can't find gpg in PATH : https://github.com/gopasspw/gopass-jsonapi/issues/26
