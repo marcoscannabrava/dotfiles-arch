@@ -6,7 +6,7 @@
 - [ ] gopass
   - [x] wofi menu with sway keybind
   - [x] gtk pinentry
-  - [ ] otp test
+  - [x] totp
   - [ ] gopass fills user, autotype multiple fields
   - [ ] gopassbridge
   - [ ] create issue about autoclip not working with wayland
