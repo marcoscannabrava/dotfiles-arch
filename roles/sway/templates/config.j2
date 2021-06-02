@@ -202,6 +202,8 @@ exec_always bash -c "pgrep syncthing || syncthing"
 # pipewire
 exec_always bash -c "pgrep pipewire || pipewire"
 exec_always bash -c "pgrep pipewire-pulse || pipewire-pulse"
+# xdg-desktop-portal-wlr
+exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # exec foreground apps
 
