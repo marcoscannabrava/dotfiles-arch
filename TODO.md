@@ -17,6 +17,7 @@
 - [x] disable or improve tooltips on waybar modules
 - [ ] /etc/profile.d not used with fish as default shell
 - [x] travis-ci fails : archlinux/base cannot pull
+- [ ] share screen with xdg-desktop-portal-wlr
 
 ### TOIMPROVE
 - [ ] wrap all .desktop with wofi
