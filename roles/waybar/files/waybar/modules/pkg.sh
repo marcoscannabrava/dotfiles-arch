@@ -19,7 +19,7 @@ pacman_check() {
 xbps_check(){
     xbps=$(xbps-install -Mnu 2>/dev/null)
     if test -n "$xbps"; then xbps_count=$(wc -l <<< "$xbps"); else xbps_count="0"; fi
-    flatpak=$(flatpak remote-ls --updates --columns=name)
+    flatpak=$(flatpak remote-ls --updates --columns=app)
     if test -n "$flatpak"; then flatpak_count=$(wc -l <<< "$flatpak"); else flatpak_count="0"; fi
 
     if [[ "$xbps_count" -eq 0 ]] && [[ "$flatpak_count" -eq 0 ]]; then exit; fi
