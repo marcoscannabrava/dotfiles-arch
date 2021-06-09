@@ -24,6 +24,8 @@
 - [ ] wrap all .desktop with wofi
 - [x] tiny irc in screen
 - [ ] pre-commit ansible syntax check
+- [ ] create datasets zroot/home/user et zroot/home/user/downloads
+  - [ ] auto snapshot zroot/home/user
 
 ### TOTEST
 - [ ] wf-recorder
