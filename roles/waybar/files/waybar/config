@@ -100,10 +100,9 @@
         "exec": "~/.config/waybar/modules/storage.sh /"
     },
     "custom/backup": {
-        "format": " <span foreground='#f3f99d'>backup...</span>",
+        "format": " <span foreground='#f3f99d'>{}</span>",
         "interval": 5,
-        "exec": "echo a",
-        "exec-if": "pgrep borg >/dev/null"
+        "exec": "if test -f /etc/borgmatic/lock; then echo 'backup disabled'; elif pgrep borg >/dev/null; then echo 'backup...'; fi"
     },
     "custom/systemd": {
         "format": "<span foreground='#ff5c57'> {}</span>",
