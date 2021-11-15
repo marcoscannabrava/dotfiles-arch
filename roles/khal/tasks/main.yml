@@ -1,0 +1,18 @@
+---
+- name: create vdirsyncer directory
+  file:
+    path: '{{ item }}'
+    state: directory
+  loop:
+    - ~/.vdirsyncer/
+    - ~/.config/khal/
+
+- name: copy vdirsyncer config
+  template:
+    src: vdirsyncer.j2
+    dest: ~/.vdirsyncer/config
+
+- name: copy khal config
+  template:
+    src: khal.j2
+    dest: ~/.config/khal/config

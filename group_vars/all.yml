@@ -2,6 +2,7 @@
 font: jetbrains mono
 git_name: eoli3n
 git_mail: jonathan.kirszling@runbox.com
+caldav: https://dav.runbox.com/
 
 # Black + DarkGrey
 color0:  '#282a36'

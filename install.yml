@@ -28,6 +28,9 @@
     - role: gpg
       tags: gpg
       when: ansible_user_id != 'root'
+    - role: khal
+      tags: khal
+      when: ansible_user_id != 'root'
     - role: sway
       tags: sway
       when: ansible_user_id != 'root'
