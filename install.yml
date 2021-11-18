@@ -28,8 +28,8 @@
     - role: gpg
       tags: gpg
       when: ansible_user_id != 'root'
-    - role: khal
-      tags: khal
+    - role: dav
+      tags: dav
       when: ansible_user_id != 'root'
     - role: sway
       tags: sway

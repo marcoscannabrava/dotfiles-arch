@@ -6,6 +6,9 @@
   loop:
     - ~/.vdirsyncer/
     - ~/.config/khal/
+    - ~/.config/khard/
+    - ~/.vdirsyncer/khal/
+    - ~/.vdirsyncer/khard/
 
 - name: copy vdirsyncer config
   template:
@@ -16,3 +19,11 @@
   template:
     src: khal.j2
     dest: ~/.config/khal/config
+
+- name: copy khard config
+  template:
+    src: khard.j2
+    dest: ~/.config/khard/khard.conf
+
+- name: vdirsyncer init
+  shell: yes | vdirsyncer discover
