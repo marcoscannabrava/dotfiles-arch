@@ -1,4 +1,5 @@
 [character]
+format = "$symbol "
 success_symbol = "[➜](purple)"
 error_symbol = "[➜](red)"
 
