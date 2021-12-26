@@ -203,7 +203,7 @@ exec_always bash -c "pgrep -x syncthing || syncthing"
 exec_always bash -c "pgrep -x pipewire || pipewire"
 exec_always bash -c "pgrep -x pipewire-pulse || pipewire-pulse"
 # wlsunset
-exec_always bash -c "pgrep -x wlsunset || wlsunset -l 43.6 -L 3.9"
+#exec_always bash -c "pgrep -x wlsunset || wlsunset -l 43.6 -L 3.9"
 
 # xdg-desktop-portal-wlr
 exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
