@@ -1,5 +1,8 @@
 ---
 font: jetbrains mono
+font_size: 10
+gtk_theme: Adwaita-dark
+icon_theme: Papirus-Dark
 git_name: eoli3n
 git_mail: jonathan.kirszling@runbox.com
 caldav: https://dav.runbox.com/
