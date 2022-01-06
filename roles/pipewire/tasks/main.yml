@@ -1,0 +1,5 @@
+---
+- name: configure pipewire
+  copy:
+    src: pipewire.conf
+    dest: ~/.config/pipewire/pipewire.conf

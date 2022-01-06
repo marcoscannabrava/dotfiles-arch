@@ -39,6 +39,9 @@
     - role: waybar
       tags: waybar
       when: ansible_user_id != 'root'
+    - role: pipewire
+      tags: pipewire
+      when: ansible_user_id != 'root'
     - role: wofi
       tags: wofi
       when: ansible_user_id != 'root'
