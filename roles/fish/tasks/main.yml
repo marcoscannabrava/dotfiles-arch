@@ -43,6 +43,7 @@
   copy:
     src: dircolors
     dest: ~/.config/
+  when: "'desktop' in group_names"
 
 #- name: Copy starship config
 #  copy:
@@ -87,5 +88,5 @@
     src: fish/desktop/
     dest: ~/.config/fish
     recursive: yes
-  when: ansible_user_id != 'root'
+  when: ansible_user_id != 'root' and "'desktop' in group_names"
   tags: rsync
