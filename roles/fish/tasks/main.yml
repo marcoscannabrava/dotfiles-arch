@@ -39,10 +39,10 @@
     executable: fish
   when: "'desktop' in group_names"
 
-#- name: Copy starship config
-#  copy:
-#    src: starship.toml
-#    dest: ~/.config/
+- name: Copy starship config
+  copy:
+    src: starship.toml
+    dest: ~/.config/
 
 - name: create fish completion dir
   file:
