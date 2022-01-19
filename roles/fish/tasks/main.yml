@@ -39,12 +39,6 @@
     executable: fish
   when: "'desktop' in group_names"
 
-- name: Copy dircolors
-  copy:
-    src: dircolors
-    dest: ~/.config/
-  when: "'desktop' in group_names"
-
 #- name: Copy starship config
 #  copy:
 #    src: starship.toml
@@ -67,7 +61,7 @@
     state: link
 
 # Separated root|users synchronize as module bugs when using become on the task: it copies always in user homedir
-- name: Sync fish config files for cli (if user)
+- name: Sync fish config files for cli user
   synchronize:
     src: fish/cli/
     dest: ~/.config/fish
@@ -75,7 +69,7 @@
   when: ansible_user_id != 'root'
   tags: rsync
 
-- name: Sync fish config files for cli (if root)
+- name: Sync fish config files for cli root
   synchronize:
     src: fish/cli/
     dest: /root/.config/fish
@@ -83,7 +77,7 @@
   when: ansible_user_id == 'root'
   tags: rsync
 
-- name: Sync fish config files for desktop (if user)
+- name: Sync fish config files for desktop user
   synchronize:
     src: fish/desktop/
     dest: ~/.config/fish
