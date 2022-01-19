@@ -37,7 +37,7 @@
   shell: fisher install franciscolourenco/done
   args:
     executable: fish
-  when: 'desktop' in group_names
+  when: desktop in group_names
 
 - name: Copy starship config
   copy:
