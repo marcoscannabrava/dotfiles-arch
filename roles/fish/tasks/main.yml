@@ -1,54 +1,53 @@
 ---
-- name: Get oh-my-fish installer
-  get_url:
-    url: https://get.oh-my.fish
-    dest: /tmp/oh-my.fish
-    mode: '0777'
-    # TORM https://github.com/oh-my-fish/oh-my-fish/issues/799
-    validate_certs: no
-  changed_when: false
+#- name: Get oh-my-fish installer
+#  get_url:
+#    url: https://get.oh-my.fish
+#    dest: /tmp/oh-my.fish
+#    mode: '0777'
+#    # TORM https://github.com/oh-my-fish/oh-my-fish/issues/799
+#    #validate_certs: no
+#  changed_when: false
+#
+#- name: Install oh-my-fish
+#  shell: /tmp/oh-my.fish --noninteractive -y
+#  args:
+#    creates: ~/.config/fish/conf.d/omf.fish
+#    executable: /usr/bin/fish
+#
+#- name: Remove oh-my-fish installer
+#  file:
+#    path: /tmp/oh-my.fish
+#    state: absent
+#  changed_when: false
 
-- name: Install oh-my-fish
-  shell: /tmp/oh-my.fish --noninteractive -y
+- name: Install fisher
+  shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
   args:
-    creates: ~/.config/fish/conf.d/omf.fish
-    executable: /usr/bin/fish
-
-# TODEL
-- name: Remove oh-my-fish installer
-  file:
-    path: /tmp/oh-my.fish
-    state: absent
-  changed_when: false
-
-- name: Install starship (root)
-  shell: curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
-  args:
-    creates: /usr/local/bin/starship
-  when: ansible_user_id == 'root'
-
-- name: check git plugin install
-  shell: grep 'abbr.*git' ~/.config/fish/fish_variables
-  register: gitcheck
-  ignore_errors: yes
-  changed_when: false
+    creates: ~/.config/fish/functions/fisher.fish
+    executable: fish
 
 - name: Install git plugin
   become_method: su
-  shell: omf install https://github.com/jhillyerd/plugin-git
+  shell: fisher install jhillyerd/plugin-git
   args:
-    executable: /usr/bin/fish
-  when: gitcheck is failed
+    executable: fish
+
+- name: Install done plugin
+  become_method: su
+  shell: fisher install franciscolourenco/done
+  args:
+    executable: fish
+  when: "'desktop' in group_names"
 
 - name: Copy dircolors
   copy:
     src: dircolors
     dest: ~/.config/
 
-- name: Copy starship config
-  copy:
-    src: starship.toml
-    dest: ~/.config/
+#- name: Copy starship config
+#  copy:
+#    src: starship.toml
+#    dest: ~/.config/
 
 - name: create fish completion dir
   file:
