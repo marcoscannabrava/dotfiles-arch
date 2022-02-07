@@ -1,4 +1,9 @@
 ---
+- name: create pipewire directory
+  file:
+    path: ~/.config/pipewire/
+    state: directory
+
 - name: configure pipewire
   copy:
     src: pipewire.conf
