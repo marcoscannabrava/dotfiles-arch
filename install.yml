@@ -1,6 +1,9 @@
 ---
 - hosts: all
   gather_facts: yes
+  tasks:
+    - include_tasks: tasks/fontawesome.yml
+  tags: [sway, waybar]
 
 - hosts: cli:desktop
   roles:
