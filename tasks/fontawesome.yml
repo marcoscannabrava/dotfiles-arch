@@ -1,5 +1,8 @@
 ---
 - name: set font awesome to 6 if archlinux
   set_fact:
-    font_icon: '"FontAwesome6FreeRegular", "FontAwesome6FreeSolid", "FontAwesome6Brands"'
+    font_icon:
+      - FontAwesome6FreeRegular
+      - FontAwesome6FreeSolid
+      - FontAwesome6Brands
   when: ansible_distribution == 'Archlinux'
