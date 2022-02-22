@@ -17,7 +17,7 @@
 * {
     border:        none;
     border-radius: 0;
-    font-family:   {{ font }}, {{ font_icon }};
+    font-family:   "{{ font }}"{% for i in font_icon %}, "{{ i }}"{% endfor %};
     font-size:     12px;
     box-shadow:    none;
     text-shadow:   none;

@@ -27,3 +27,4 @@
 
 - name: vdirsyncer init
   shell: yes | vdirsyncer discover
+  ignore_errors: yes
