@@ -1,6 +1,8 @@
 # Autostart sway when user login on tty1
 
 set -x XDG_CURRENT_DESKTOP 'sway' # xdg-desktop-portal
+set -x XDG_RUNTIME_DIR /run/user/(id -u)/
+
 set -x MOZ_ENABLE_WAYLAND 1
 set -x KITTY_ENABLE_WAYLAND 1
 set -x QT_QPA_PLATFORM 'wayland-egl'
