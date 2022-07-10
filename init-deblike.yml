@@ -21,5 +21,4 @@
         name: '{{ item }}'
         shell: /usr/bin/fish
       loop:
-        - kube
         - root

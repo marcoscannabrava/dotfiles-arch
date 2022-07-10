@@ -102,7 +102,6 @@ ansible-playbook install.yml -l host1 -b -K
 
 -----
 
-##### Previously
+# Notes
 
-* [i3-gaps Dark Solarized](https://github.com/eoli3n/dotfiles/tree/zsh-agnoster-solarized)
-* [i3-gaps Acid Dark](https://github.com/eoli3n/dotfiles/tree/i3-gaps-acid-dark)
+install `ansible-galaxy collection install ansible.posix`
