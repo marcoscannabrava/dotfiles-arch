@@ -1,21 +1,10 @@
 # Sway config file
 
-# configure keyboard
-input * xkb_layout "fr"
-input * xkb_variant "oss"
-input * xkb_options "grp:win_space_toggle"
-input * xkb_numlock "enabled"
-input "MANUFACTURER1 Keyboard" xkb_model "pc101"
-
-# configure touchpad
-input type:touchpad dwt disabled
-input type:touchpad click_method clickfinger
-
 # mod key
-set $mod Mod4
+# set $mod Mod4
 
 # fonts
-font pango: "{{ font }}"{% for i in font_icon %}, "{{ i }}"{% endfor %} 10
+# font pango: "{{ font }}"{% for i in font_icon %}, "{{ i }}"{% endfor %} 10
 
 # gaps
 default_border none
@@ -120,70 +109,16 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 bindsym $mod+Shift+q exec ~/.config/wofi/powermenu.sh
 
 #grimshot
-bindsym Shift+Print exec grimshot save area /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
-bindsym Control+Print exec grimshot save window /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
-bindsym Print exec grimshot save output /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
+# bindsym Shift+Print exec grimshot save area /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
+# bindsym Control+Print exec grimshot save window /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
+# bindsym Print exec grimshot save output /home/user/img/grimshots/$(zenity --entry --text "Set filename:" --entry-text ".png") | wl-copy -p
 
 # variety
 bindsym $mod+less exec variety --next
 
-# apps
-bindsym $mod+Control+z exec zim
-bindsym $mod+Control+t exec thunar
-bindsym $mod+Control+p exec pavucontrol
-
-# bindsym spotify
-bindsym $mod+Control+left exec playerctl -p spotify previous
-bindsym $mod+Control+down exec playerctl -p spotify play-pause
-bindsym $mod+Control+right exec playerctl -p spotify next
-
-# switch to workspace
-bindsym $mod+ampersand workspace $tag1
-bindsym $mod+eacute workspace $tag2
-bindsym $mod+quotedbl workspace $tag3
-bindsym $mod+apostrophe workspace $tag4
-bindsym $mod+parenleft workspace $tag5
-bindsym $mod+minus workspace $tag6
-bindsym $mod+egrave workspace $tag7
-bindsym $mod+underscore workspace $tag8
-bindsym $mod+ccedilla workspace $tag9
-bindsym $mod+agrave workspace $tag10
-
-# move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace $tag1
-bindsym $mod+Shift+eacute move container to workspace $tag2
-bindsym $mod+Shift+quotedbl move container to workspace $tag3
-bindsym $mod+Shift+apostrophe move container to workspace $tag4
-bindsym $mod+Shift+parenleft move container to workspace $tag5
-bindsym $mod+Shift+minus move container to workspace $tag6
-bindsym $mod+Shift+egrave move container to workspace $tag7
-bindsym $mod+Shift+underscore move container to workspace $tag8
-bindsym $mod+Shift+ccedilla move container to workspace $tag9
-bindsym $mod+Shift+agrave move container to workspace $tag10
-
 # floatings
 for_window [title="Images de Variety"] floating enable, border pixel 1, move left 647px
 for_window [app_id="zenity"] floating enable
-
-# assign and focus xwayland
-assign [class="Spotify"] $tag6
-for_window [class="Spotify"] focus
-assign [class="code-oss"] $tag8
-for_window [class="code-oss"] focus
-assign [class="gimp"] $tag8
-for_window [class="gimp"] focus
-
-# assign and focus wayland
-assign [app_id="evolution"] $tag3
-for_window [app_id="evolution"] focus
-assign [app_id="virt-manager"] $tag8
-for_window [app_id="virt-manager"] focus
-assign [app_id="zim"] $tag8
-for_window [app_id="zim"] focus
-assign [app_id="transmission-gtk"] $tag9
-for_window [app_id="transmission-gtk"] focus
-assign [app_id="pavucontrol"] $tag10
-for_window [app_id="pavucontrol"] focus
 
 # move workspace between screens
 bindsym $mod+Prior move workspace to output left
@@ -193,8 +128,6 @@ bindsym $mod+Next move workspace to output right
 
 # exec background apps
 
-# tiny
-exec_always bash -c "pgrep -x tiny || screen -S tiny -md tiny"
 # mako
 exec_always bash -c "pgrep -x mako || mako"
 # wlsunset
@@ -207,8 +140,6 @@ exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # variery
 exec variety &
-# tiny
-exec swaymsg 'workspace $tag4; exec kitty bash -c "screen -R tiny"'
 # waybar exec
 exec_always ~/.config/waybar/waybar.sh
 # mako away
