@@ -210,9 +210,7 @@ exec variety &
 # tiny
 exec swaymsg 'workspace $tag4; exec kitty bash -c "screen -R tiny"'
 # waybar exec
-exec_always ~/.config/waybar/waybar.sh &
-# wob exec
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec_always ~/.config/waybar/waybar.sh
 # mako away
 #exec swayidle timeout 30 "makoctl set-mode away" resume "makoctl set-mode default"
 # set gtk theme

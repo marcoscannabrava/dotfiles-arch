@@ -53,8 +53,6 @@
             "default": ["<span foreground='#929292'></span>"],
             "headphones": ["<span foreground='#929292'></span>"]
         },
-        "on-scroll-up": "pamixer -ui 1 && pamixer --get-volume > $SWAYSOCK.wob",
-        "on-scroll-down": "pamixer -ud 1 && pamixer --get-volume > $SWAYSOCK.wob",
         "tooltip": false
     },
     "custom/vpn": {
@@ -65,9 +63,7 @@
     },
     "backlight": {
         "format": "<span foreground='#929292'>{icon}</span> {percent}%",
-        "format-icons": [""],
-        "on-scroll-up": "brightnessctl set +2% && brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob",
-        "on-scroll-down": "brightnessctl set 2%- && brightnessctl -m | cut -d',' -f4 | tr -d '%' > $SWAYSOCK.wob"
+        "format-icons": [""]
     }
 }, {
     "layer": "bottom",
